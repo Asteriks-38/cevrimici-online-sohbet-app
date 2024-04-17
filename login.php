@@ -1,3 +1,59 @@
+<?php
+include "db.php";
+session_start();
+
+if(isset($_POST["username"]) && isset($_POST["password"])){
+  
+  $username = $_POST["username"];
+  $pass_word = $_POST["password"];
+
+  $q="SELECT * FROM users where username='$username' && password='$pass_word'";
+
+  if($rq=mysqli_query($db,$q)){
+    if(mysqli_num_rows($rq)==1){
+      $update_query = "UPDATE users SET online = 1 WHERE username = '$username'";
+      mysqli_query($db, $update_query);
+
+      $_SESSION["uname"] = $username;
+    
+      header("Location: index.php");
+      exit;
+
+
+    }
+    else
+    {
+      $q="SELECT * FROM users where username='$username'";
+      if($rq=mysqli_query($db,$q)){
+        if(mysqli_num_rows($rq)==1){
+          echo $username." is already taken by someone";
+        }
+        else
+        {
+
+          $q="INSERT INTO users(username,password) values('$username', '$pass_word')";
+          if($rq=mysqli_query($db,$q)){
+            $q="SELECT * FROM users where username='$username' and password='$pass_word'";
+            if($rq=mysqli_query($db,$q)){
+              if(mysqli_num_rows($rq)==1){
+                $update_query = "UPDATE users SET online = 1 WHERE username = '$username'";
+                mysqli_query($db, $update_query);
+                
+                $_SESSION["uname"] = $username;
+                header("Location: index.php");
+                exit;
+              }
+
+            }
+          }
+        }
+    } }
+  }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

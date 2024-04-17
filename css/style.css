@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  }
+  
+  body{
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: #49c3fc;
+  }
+  h1{
+    color: white;
+    font-family: cursive;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .chat{
+    width: auto;
+    height: auto;
+    position: relative;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  .chat h2{
+    font-size: 2.3rem;
+    font-family: cursive;
+    text-align: center;
+  }
+  .msg{
+    width: auto;
+    height: 500px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+  ::-webkit-scrollbar{
+    width: 2px;
+  }
+  .input_msg{
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  input{
+    width: 70%;
+    font-size: 1.2rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 5px;
+  }
+  .input_msg button{
+    background-color: #7ba9ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+  }
+  .input_msg button:hover{
+    background-color: #377af8;
+    transition: 0.4s;
+  }
+  
+  .msg p{
+    background-color: rgba(128, 128, 128, 0.219);
+    padding: 0.4rem 1rem;
+    width: fit-content;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  .msg p span{
+    display: block;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+  .msg .sender{
+    background-color: rgb(85, 255, 85);
+    align-self: end;
+  }
+  .online-users {
+    position: fixed;
+      top: 0;
+      left: -200px;
+      width: 200px;
+      height: 100%;
+      background-color: #f4f4f494;
+      padding: 20px;
+      overflow-y: auto;
+      transition: left 0.3s; /* Geçiş efekti */
+      z-index: 100;
+      border-radius: 30px;
+  }
+  
+  /* SAĞA DAYALI
+  /* .online-users {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px; 
+    z-index: 100; 
+    background-color: #fff;
+    border: 1px solid #ddd; 
+  } */
+  
+  button{
+    background-color: #7ba9ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  button:hover{
+    background-color: #377af8;
+    transition: 0.4s;
+  }
+  
+  /*MOBILE*/
+  .toggle-menu{
+    position: fixed;
+    bottom: 20px;
+    z-index: 1000;
+    text-align: center;
+  }
+  #mobile-menu-toggle {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    font-size: 24px;
+    height: auto;
+    width: auto;
+    text-align: center;
+  }
+  #mobile-menu-toggle:hover{
+    background-color: black;
+    color: white;
+    transition: 0.4s;
+  }
