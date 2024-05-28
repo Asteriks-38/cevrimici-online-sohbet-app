@@ -28,6 +28,9 @@ if(isset($_SESSION["uname"])){
     <ul id="online-user-list">
     </ul>
   </div>
+  <div class="profile">
+    <a href="profile.php">Profile</a>
+  </div>
 
   <h1>LoLo Chat</h1>
   <div class="chat">
@@ -43,7 +46,7 @@ if(isset($_SESSION["uname"])){
   </div>
   <form action="logout.php" method="post">
     <center>
-      <button type="submit">Çıkış Yap</button>
+      <button type="submit">Exit</button>
     </center>
     
 </form>
